@@ -76,7 +76,7 @@
 */
 - (IBAction)edit:(id)sender {
     NSLog(@"do edit..");
-    _contact.name=self.nameField.text;
+    _contact.name=[NSString stringWithFormat:@"%@%@", self.nameField.text, @"e...ene"];
     _contact.mobile=self.mobileField.text;
     
     //2代理通知list控制器刷新表格，或block

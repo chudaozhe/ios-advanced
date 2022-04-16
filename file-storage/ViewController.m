@@ -67,6 +67,8 @@
     NSString *password=[[NSUserDefaults standardUserDefaults] objectForKey:@"password"];
     NSInteger rember=[[NSUserDefaults standardUserDefaults] boolForKey:@"rember"];
     NSLog(@"%@ --- %@ --- %zd", name, password, rember);
+    //所有key
+    NSLog(@"%@", [[[NSUserDefaults standardUserDefaults] dictionaryRepresentation] allKeys]);
 }
 -(void)plistSave
 {

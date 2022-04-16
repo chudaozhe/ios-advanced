@@ -86,12 +86,14 @@
 //点击某个cell时调用
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    NSLog(@"data1:%@", self.data);
     UIStoryboard *storyboard=[UIStoryboard storyboardWithName:@"Main" bundle:nil];
     EditController *editVc=[storyboard instantiateViewControllerWithIdentifier:@"edit"];
     editVc.contact=self.data[indexPath.row];
     editVc.delegate=self;
     editVc.blok=^(){
         NSLog(@"block");
+        NSLog(@"data2:%@", self.data);
         [self.tableView reloadData];
     };
     [self.navigationController pushViewController:editVc animated:YES];
